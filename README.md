@@ -1,3 +1,8 @@
 # Notes
 
-These are notes to myself
+Stuff I want to remember.
+
+
+## Haskell
+
+
