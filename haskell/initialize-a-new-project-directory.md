@@ -8,9 +8,7 @@ cabal init \
   --non-interactive \
   --minimal \
   --license MIT \
-  --is-libandexe \
-  --source-dir src \
-  --expose-module Foo \
+  --simple \
   --package-name hello-world
 ```
 
