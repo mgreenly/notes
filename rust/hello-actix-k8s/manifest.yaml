@@ -26,7 +26,7 @@ spec:
     spec:
       containers:
       - name: hello-actix
-        image: mgreenly/hello-actix:v0.1.8
+        image: mgreenly/hello-actix:v0.2.0
         ports:
         - containerPort: 8088
           protocol: TCP
