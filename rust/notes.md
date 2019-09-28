@@ -8,7 +8,9 @@
 
 TODO:
   decide how I want to do ingress?
+
     * haproxy - https://www.haproxy.com/blog/dissecting-the-haproxy-kubernetes-ingress-controller/
     * nginx
+
   setup default 404 page
   figure out certs on digital ocean
