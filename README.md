@@ -6,7 +6,7 @@ Some topics you're likely to see here are Kubernetes, Rust, Ruby and Devops stuf
 
 ## Cheat Sheets
 
-  * [kubectl](https://github.com/mgreenly/notes/blob/master/docs/cheatsheets/kubctl.md)
+  * [kubectl](https://github.com/mgreenly/notes/blob/master/docs/cheatsheets/kubectl.md)
 
 ## HOWTO
 
