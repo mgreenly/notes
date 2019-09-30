@@ -1,5 +1,5 @@
 [package]
-name = "bar-app"
+name = "bar"
 version = "0.1.0"
 authors = ["Michael Greenly <mgreenly@gmail.com>"]
 edition = "2018"

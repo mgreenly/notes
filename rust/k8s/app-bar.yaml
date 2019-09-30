@@ -4,21 +4,21 @@ kind: Deployment
 metadata:
   namespace: default
   labels:
-    run: bar-app
-  name: bar-app
+    run: bar
+  name: bar
 spec:
   replicas: 2
   selector:
     matchLabels:
-      run: bar-app
+      run: bar
   template:
     metadata:
       labels:
-        run: bar-app
+        run: bar
     spec:
       containers:
-      - name: bar-app
-        image: mgreenly/bar-app:v0.1.0
+      - name: bar
+        image: mgreenly/bar:v0.2.0
         ports:
         - containerPort: 8088
 
@@ -28,15 +28,15 @@ kind: Service
 metadata:
   namespace: default
   labels:
-    run: bar-app
-  name: bar-app
+    run: bar
+  name: bar
   annotations:
     haproxy.org/check: "enabled"
     haproxy.org/forwarded-for: "enabled"
     haproxy.org/load-balance: "leastconn"
 spec:
   selector:
-    run: bar-app
+    run: bar
   ports:
   - name: port-2
     port: 80
