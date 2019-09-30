@@ -17,3 +17,14 @@ spec:
         backend:
           serviceName: bar-app
           servicePort: 80
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: haproxy-configmap
+  namespace: default
+data:
+  servers-increment: "42"
+  ssl-redirect: "OFF"
+  timeout-connect: "10s"
+
