@@ -1,0 +1,44 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: default
+  labels:
+    run: foo-app
+  name: foo-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      run: foo-app
+  template:
+    metadata:
+      labels:
+        run: foo-app
+    spec:
+      containers:
+      - name: foo-app
+        image: mgreenly/foo-app:v0.1.0
+        ports:
+        - containerPort: 8088
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: default
+  labels:
+    run: foo-app
+  name: foo-app
+  annotations:
+    haproxy.org/check: "enabled"
+    haproxy.org/forwarded-for: "enabled"
+    haproxy.org/load-balance: "leastconn"
+spec:
+  selector:
+    run: foo-app
+  ports:
+  - name: port-1
+    port: 80
+    protocol: TCP
+    targetPort: 8088
