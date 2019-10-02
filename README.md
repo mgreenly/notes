@@ -7,4 +7,13 @@ Some topics you're likely to see here are Kubernetes, Rust, Ruby and Devops stuf
 
 ### TODO
 
-  * investigate cilium
+  Figure out ingress for k8s on GCP.
+
+  Figure out the CI/CD pipeline for GCP
+
+    * cloud source
+    * cloud build
+    * container registry
+    * deployment manager
+
+  Learn about persistent storage options for k8s clusters in GCP
