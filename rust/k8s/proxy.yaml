@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: proxy
-        image: mgreenly/proxy:v1.4
+        image: mgreenly/proxy:v1.8
         ports:
         - containerPort: 80
 ---
