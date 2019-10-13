@@ -2,35 +2,37 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: foo-deployment
+  name: proxy-deployment
   namespace: default
 spec:
   selector:
     matchLabels:
-      app: foo
+      app: proxy
   replicas: 2
   template:
     metadata:
       labels:
-        app: foo
+        app: proxy
     spec:
       containers:
-      - name: foo
-        image: mgreenly/foo:v0.2.3
+      - name: proxy
+        image: mgreenly/proxy:v1.4
         ports:
-        - containerPort: 8080
+        - containerPort: 80
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: foo-service
+  name: proxy-service
   labels:
-    app: foo
+    app: proxy
 spec:
-  type: ClusterIP
+  type: NodePort
   selector:
-    app: foo
+    app: proxy
   ports:
   - name: tcp-80
     port: 80
-    targetPort: 8080
+    targetPort: 80
+    nodePort: 30080
+    protocol: TCP

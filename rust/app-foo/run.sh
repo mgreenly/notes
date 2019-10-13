@@ -1,3 +1,3 @@
 #!/bin/sh
 
-docker run -it --rm -p 8088:8088 mgreenly/foo:$(cat version)
+docker run -it --rm -p 8080:8080 mgreenly/foo:$(cat version)

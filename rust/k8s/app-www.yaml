@@ -2,35 +2,36 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: foo-deployment
+  name: www-deployment
   namespace: default
 spec:
   selector:
     matchLabels:
-      app: foo
+      app: www
   replicas: 2
   template:
     metadata:
       labels:
-        app: foo
+        app: www
     spec:
       containers:
-      - name: foo
-        image: mgreenly/foo:v0.2.3
+      - name: www
+        image: mgreenly/www:v1.0
         ports:
-        - containerPort: 8080
+        - containerPort: 80
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: foo-service
+  name: www-service
   labels:
-    app: foo
+    app: www
 spec:
   type: ClusterIP
   selector:
-    app: foo
+    app: www
   ports:
   - name: tcp-80
     port: 80
-    targetPort: 8080
+    targetPort: 80
+    protocol: TCP
