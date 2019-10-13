@@ -1,0 +1,37 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: logref-www-deployment
+  namespace: default
+spec:
+  selector:
+    matchLabels:
+      app: logref-www
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: logref-www
+    spec:
+      containers:
+      - name: logref-www
+        image: mgreenly/logref-www:v1.2
+        ports:
+        - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: logref-www-service
+  labels:
+    app: logref-www
+spec:
+  type: ClusterIP
+  selector:
+    app: logref-www
+  ports:
+  - name: tcp-80
+    port: 80
+    targetPort: 80
+    protocol: TCP
