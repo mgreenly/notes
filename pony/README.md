@@ -3,6 +3,7 @@
   * [website]( https://www.ponylang.io/)
   * [installation](https://github.com/ponylang/ponyc/blob/master/README.md#installation)
   * [pony-vim-syntax](https://github.com/dleonard0/pony-vim-syntax)
+  * [videos](https://www.youtube.com/playlist?list=PLfHYba8zC7hQmDRUcYfJolL2WpUFO8XWC)
 
 
 ## Installing on Debian
@@ -16,15 +17,14 @@ sudo make install
 ```
 
 
-
 ## Misc
 
-Classes
+### Classes
 
   leading underscore of field makes it private
 
+### String
 
-
-#[String](https://stdlib.ponylang.io/builtin-String/)
+[String](https://stdlib.ponylang.io/builtin-String/)
 
 

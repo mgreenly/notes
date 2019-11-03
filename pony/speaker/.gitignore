@@ -5,3 +5,4 @@
 !.gitignore
 !*.pony
 !*.md
+!bundle.json
