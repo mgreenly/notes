@@ -8,6 +8,8 @@
 
 ## Installing on Debian
 
+  * [ponyup](https://github.com/ponylang/ponyup)
+
 ```
 git clone https://github.com/ponylang/ponyc.git
 git checkout tags/0.33.0
