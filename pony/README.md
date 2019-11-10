@@ -8,25 +8,10 @@
 
 ## Installing on Debian
 
-  * [ponyup](https://github.com/ponylang/ponyup)
-
 ```
 git clone https://github.com/ponylang/ponyc.git
-git checkout tags/0.33.0
+git checkout tags/{{version}}
 cd ponyc
 make default_pic=true
 sudo make install
 ```
-
-
-## Misc
-
-### Classes
-
-  leading underscore of field makes it private
-
-### String
-
-[String](https://stdlib.ponylang.io/builtin-String/)
-
-
