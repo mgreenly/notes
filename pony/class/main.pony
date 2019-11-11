@@ -1,6 +1,6 @@
 
 class Person
-  let fName: String
+  let fName: String           // fields of the class must appear before methods
   let lName: String
   var score: U64
 
@@ -8,6 +8,8 @@ class Person
     fName = fName'
     lName = lName'
     score = 0
+
+  fun greeting(other: String) =>
 
 
 actor Main
