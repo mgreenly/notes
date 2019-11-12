@@ -28,9 +28,9 @@ Things I did in order.
   1. Figure out [simple litteral types](https://github.com/mgreenly/notes/blob/master/pony/litterals/main.pony).
   1. Figure out [compound litteral types](https://github.com/mgreenly/notes/blob/master/pony/compound/main.pony).
   1. Figure out [printing/building simple strings](https://github.com/mgreenly/notes/blob/master/pony/printing/main.pony).
-  1. Figure out control
-  1. Figure out variables
+  1. Figure out [control](https://github.com/mgreenly/notes/blob/master/pony/control/main.pony)
+  1. Figure out [variables](https://github.com/mgreenly/notes/blob/master/pony/variables/main.pony)
   1. Figure out [class](https://github.com/mgreenly/notes/blob/master/pony/class/main.pony).
-  1. Figure out methods
-  1. Figure out subtyping
-  1. Figure out type-expressions
+  1. Figure out [methods](https://github.com/mgreenly/notes/blob/master/pony/methods/main.pony)
+  1. Figure out [subtyping](https://github.com/mgreenly/notes/blob/master/pony/subtyping/main.pony)
+  1. Figure out [type-expressions](https://github.com/mgreenly/notes/blob/master/pony/type-expressions/main.pony)
