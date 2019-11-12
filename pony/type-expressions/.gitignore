@@ -1,0 +1,8 @@
+# ignore everything
+*
+
+# except these files
+!.gitignore
+!*.pony
+!*.md
+!bundle.json

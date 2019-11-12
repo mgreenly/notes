@@ -1,3 +1,28 @@
+//
+// if `condition` then        # conditions must always evaluate to a Bool
+// elseif `condition` then
+// else
+// end
+//
+// while `condition` do
+// else                       # the else clause executes if the condition is never true
+// end
+//
+// for `thing` in `iterator`
+// else
+// end
+//
+// repeat
+// else
+// until condition end
+//
+// break                      # exits the inner most loop
+
+// continue                   # skips to next iteration of the loop.  If the current iteration
+//                            # is the last iteration of the loop it will execute the else clause
+//                            # if one exists.
+
+
 
 
 actor Main
