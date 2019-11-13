@@ -1,26 +1,43 @@
 """ 
-  methods can have 0 or more params
-  methods can have 0 or 1 return values
+  METHODS
+
+    methods can have 0 or more params
+    methods can have 0 or 1 return values
+    method names that start with an underscore are private
 
   HOWTO DEFINE METHODS
 
-  fun f() =>                                              # no args returns None
-    {{BODY}}
+     fun f() =>                                              # no args returns None
+       {{BODY}}
 
-  fun g(foo: Foo, bar: Bar, baz: Baz) Qux =>              # positional args
-    {{BODY}}
+     fun g(foo: Foo, bar: Bar, baz: Baz) Qux =>              # positional args
+       {{BODY}}
 
-  fun h(foo: Foo, bar: Bar = 0, baz: Baz = 0) Qux =>      # named with default args
-    {{BODY}}
+     fun h(foo: Foo, bar: Bar = 0, baz: Baz = 0) Qux =>      # named with default args
+       {{BODY}}
 
 
   HOWTO CALL METHODS
 
-  f()                                                     # parens always required
-  g(0, 1, 2)                                              # positional args (foo=0, bar=1, baz=2)
-  h(0, 1)                                                 # positional with defaults (foo=0, bar=1, baz=0)
-  h(where foo = 1, bar = 2, baz = 3)                      # named arguments; (foo=1, bar=2, baz=3)
-  h(1, where bar = 3)                                     # you can mix them all; (foo=1, bar=3, baz=0)
+     f()                                                     # parens always required
+     g(0, 1, 2)                                              # positional args (foo=0, bar=1, baz=2)
+     h(0, 1)                                                 # positional with defaults (foo=0, bar=1, baz=0)
+     h(where foo = 1, bar = 2, baz = 3)                      # named arguments; (foo=1, bar=2, baz=3)
+     h(1, where bar = 3)                                     # you can mix them all; (foo=1, bar=3, baz=0)
+
+
+  CHAINING
+
+     var thing: Thing = Thing.create()
+
+     thing.>foo().>bar()                                     # calls foo on thing, discards it's return value
+                                                             # and calls bar on thing
+
+  LAMBDAS
+
+     let is_odd = {(u: U32): Bool => (n % 2) == 1}
+
+
 
 """
 class Person
