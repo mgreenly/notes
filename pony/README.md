@@ -6,7 +6,7 @@
   * [videos](https://www.youtube.com/playlist?list=PLfHYba8zC7hQmDRUcYfJolL2WpUFO8XWC)
   * [stdlib](https://stdlib.ponylang.io/)
   * [pony cheat sheet](https://www.ponylang.io/media/cheatsheet/pony-cheat-sheet.pdf)
-
+  * [playground](https://playground.ponylang.io/)
 
 ## Installing on Debian
 
