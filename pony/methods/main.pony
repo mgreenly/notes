@@ -1,18 +1,26 @@
-"""
-
+""" 
   methods can have 0 or more params
   methods can have 0 or 1 return values
 
-  methods with no params still have () in def
+  HOWTO DEFINE METHODS
+
+  fun f() =>                                              # no args returns None
+    {{BODY}}
+
+  fun g(foo: Foo, bar: Bar, baz: Baz) Qux =>              # positional args
+    {{BODY}}
+
+  fun h(foo: Foo, bar: Bar = 0, baz: Baz = 0) Qux =>      # named with default args
+    {{BODY}}
 
 
-      fun name(var-name: var-type,...): return-type =>
-        BODY
+  HOWTO CALL METHODS
 
-
-  notice there's no end
-
-
+  f()                                                     # parens always required
+  g(0, 1, 2)                                              # positional args (foo=0, bar=1, baz=2)
+  h(0, 1)                                                 # positional with defaults (foo=0, bar=1, baz=0)
+  h(where foo = 1, bar = 2, baz = 3)                      # named arguments; (foo=1, bar=2, baz=3)
+  h(1, where bar = 3)                                     # you can mix them all; (foo=1, bar=3, baz=0)
 
 """
 class Person
