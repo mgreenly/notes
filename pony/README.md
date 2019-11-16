@@ -7,6 +7,8 @@
   * [stdlib](https://stdlib.ponylang.io/)
   * [pony cheat sheet](https://www.ponylang.io/media/cheatsheet/pony-cheat-sheet.pdf)
   * [playground](https://playground.ponylang.io/)
+  * [c-ffi](https://avranju.gitbooks.io/pony-tutorial/c-ffi/calling-c.html)
+
 
 ## Installing on Debian
 
