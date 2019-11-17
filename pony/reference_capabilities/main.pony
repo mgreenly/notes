@@ -1,4 +1,5 @@
 """
+  https://bluishcoder.co.nz/2017/07/31/reference_capabilities_consume_recover_in_pony.html
 
   +--------------------------------------------
   | cap            | this   | same   | other  |

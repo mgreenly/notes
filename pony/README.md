@@ -36,3 +36,9 @@ Things I did in order.
   1. Figure out [methods](https://github.com/mgreenly/notes/blob/master/pony/methods/main.pony)
   1. Figure out [subtyping](https://github.com/mgreenly/notes/blob/master/pony/subtyping/main.pony)
   1. Figure out [type-expressions](https://github.com/mgreenly/notes/blob/master/pony/type-expressions/main.pony)
+
+### Style
+
+  variables seem to be snakecase
+  classes/actors seem to be upper camel case
+  seems to be 2space indent
