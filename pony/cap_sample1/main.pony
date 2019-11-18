@@ -22,14 +22,13 @@ actor Engine
   var main: Main
   var mob: Mob
 
-  // if a class is going to be passed it must be iso as param and then
-  // the param must be consumed to assign it to a field.  The field it's
-  // assigned to can be any cap, in this case ref
+  // if a class is passed as a parameter it must be iso but we can consume an iso and turn it
+  // into anything.  In this case we consume it and turn it into a ref.  Inside of this actor
+  // we have a ref cap for mob and can do anything we want with it.
   new create(main': Main, mob': Mob iso) =>
     main = main'
     mob = consume mob'
 
-  // we have a ref copy of mob so we can manipulate it how ever we want
   be tick() =>
     mob.move(1,1)
     main.render(mob.freeze())
@@ -43,24 +42,26 @@ actor Main
     // save env for later
     env = env'
 
-    // by default a variable referencing a class will have `ref` cap
-    var mob1: Mob = Mob.create(0, 0)
-    // a ref cap can be turned into any engine type of cap with recover
+    // by default a variable referencing a class will have `ref` cap.
+    // So this will not work.  We need an iso cap mob to use as a 
+    // param
+    //
+    //     var mob1: Mob = Mob.create(0, 0)
+    //     var engine = Engine.create(mob1)
+    //
+
+
+    // a ref cap can be turned into any cap with recover.  Since
+    // Mob.create returns a ref cap we use recover to turn that
+    // into iso then use it as a param
     var mob2: Mob iso = recover iso Mob.create(0, 0) end
 
+    var engine = Engine.create(this, consume mob2)
 
-    // this will not work
-    // mob1 is `Mob ref` but Mob.create needs a `Mob iso`
-    //
-    //    var engine = Engine.create(mob1)
-
-    // This works because mob2 is iso
-    var engine2 = Engine.create(this, consume mob2)
-
-    engine2.tick()
-    engine2.tick()
-    engine2.tick()
-    engine2.tick()
+    engine.tick()
+    engine.tick()
+    engine.tick()
+    engine.tick()
 
   // render receives read only val copies of mobs to output
   be render(mob: Mob val) =>
