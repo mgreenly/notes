@@ -42,3 +42,8 @@ Things I did in order.
   variables seem to be snakecase
   classes/actors seem to be upper camel case
   seems to be 2space indent
+
+
+### Generics
+
+
