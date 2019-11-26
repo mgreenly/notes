@@ -60,7 +60,7 @@ tag     -    -    +     tag            tag        tag
 
   1. use tag if you only need identity and may share it
   3. use val if it's immutable and may share it
-  2. use box if need an immutable alias to a mutable reference but will not share it
+  2. use box if you need an immutable alias to a mutable reference but will not share it
   5. use trn if you need to initialize it, then create immutable box alias and not share it
   4. use ref if you need to mutate it and never share it
   6. use iso if you need to mutate it and share it
