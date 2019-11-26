@@ -46,7 +46,7 @@ Things I did in order.
 
 ### Reference Capabilities
 
-
+```
 with   read write send  alias          recover    consume
 ------------------------------------------------------
 iso     +    +    +     tag            tag        tag, ref, trn
@@ -55,6 +55,7 @@ ref     +    +    -     tag, box, ref  tag        tag
 val     +    -    +     tag, box, val  tag, box   tag, box
 box     +    -    -     tag, box       tag        tag
 tag     -    -    +     tag            tag        tag
+```
 
 
   1. use tag if you only need identity and may share it
