@@ -47,16 +47,15 @@ Things I did in order.
 ### Reference Capabilities
 
 ```
-with   read write send  alias          recover    consume
-------------------------------------------------------
-iso     +    +    +     tag            tag        tag, ref, trn
-trn     +    +    -     tag, box       tag        tag, ref
-ref     +    +    -     tag, box, ref  tag        tag
-val     +    -    +     tag, box, val  tag, box   tag, box
-box     +    -    -     tag, box       tag        tag
-tag     -    -    +     tag            tag        tag
+with   read write send  alias          recover                  consume
+-----------------------------------------------------------------------------
+iso     +    +    +     tag            tag,box,val,ref,trn,iso  tag,box,val,ref,trn,iso
+trn     +    +    -     tag, box       tag,box,val,ref,trn,iso  tag,box,val,ref,trn
+ref     +    +    -     tag, box, ref  tag,box,val,ref,trn,iso  tag,box,ref
+val     +    -    +     tag, box, val  tag,box,val              tag,box,val
+box     +    -    -     tag, box       tag box,val              tag,box
+tag     -    -    +     tag            tag                      tag
 ```
-
 
   1. use tag if you only need identity and may share it
   3. use val if it's immutable and may share it
