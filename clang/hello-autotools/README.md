@@ -3,7 +3,7 @@
 A minimal autotools hello world program
 
 
-Build and Install
+## Build and Install
 
 ```shell
 ./autogen.sh
@@ -11,7 +11,7 @@ Build and Install
 make install
 ```
 
-# Clean Directory
+## Clean Directory
 
 ```shell
 git clean -fd
