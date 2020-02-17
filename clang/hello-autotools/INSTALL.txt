@@ -1,0 +1,7 @@
+# Hello Autotools
+
+A minimal autotools hello world program
+
+## Configure and Install
+
+   ./configure --prefix=$HOME/.local/opt && make install
