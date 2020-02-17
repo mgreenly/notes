@@ -1,4 +1,7 @@
-aclocal
-autoconf
-automake --add-missing --foreign
-configure --prefix=$HOME/.local/opt
+
+./autogen.sh
+./configure --prefix=$HOME/.local/opt
+make install
+
+
+$> git clean -fd
