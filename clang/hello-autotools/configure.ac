@@ -1,4 +1,6 @@
 AC_INIT([Hello Autotools], 1.0)
+PKG_CHECK_MODULES([CHECK], [check])
+AC_CONFIG_FILES([src/Makefile])
 AM_INIT_AUTOMAKE
 AC_PROG_CC
 AC_CONFIG_FILES(Makefile)

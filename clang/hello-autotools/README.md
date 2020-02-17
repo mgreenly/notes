@@ -11,6 +11,12 @@ A minimal autotools hello world program
 make install
 ```
 
+## Release
+
+```shell
+$> ./autogen.sh && ./configure && make distcheck
+```
+
 ## Clean Directory
 
 ```shell

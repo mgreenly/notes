@@ -1,4 +1,5 @@
-bin_PROGRAMS = hello-autotools
-hello_autotools_SOURCES = main.c
+SUBDIRS=src
+EXTRA_DIST= \
+	INSTALL.txt
 
 AM_CFLAGS=-std=c18 -Wall -Werror -O0
