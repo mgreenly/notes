@@ -1,2 +1,2 @@
-bin_PROGRAMS = tut_prog
+bin_PROGRAMS = hello-autotools
 tut_prog_SOURCES = main.c
