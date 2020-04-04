@@ -1,0 +1,18 @@
+#!/bin/bash
+
+if [[ ! -d .debian-cabal ]]; then
+  mkdir $PWD/.debian-cabal
+fi
+
+# docker pull mgreenly/haskell
+
+#
+# all arguments given to this script are passed to cabal running in the container
+#
+exec docker run --rm -i -t \
+  -u $(id -u):$(id -g) \
+  -v $PWD/.debian-cabal:/home/haskell/.cabal \
+  -v $PWD:/workdir  \
+  -w /workdir \
+  mgreenly/haskell:latest \
+  $@
