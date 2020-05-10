@@ -2,7 +2,7 @@
 
 Lets start with a simple program
 
-```
+```haskell
 module Main where
 
 import System.IO (hFlush, stdout)
