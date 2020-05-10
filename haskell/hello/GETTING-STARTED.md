@@ -1,6 +1,6 @@
 # Hello World
 
-Lets start with a simple program
+A program to start with
 
 ```
 module Main where
@@ -16,20 +16,20 @@ main = do
 
 Most of this shouldn't look to alien.
 
-The first line, `module Main where`, says what follows is in the `Main` module.
+The first line, `module Main where`, says we're writing code that will exist in the Main module.
 
 The second line, `import System.IO (hFlush, stdout)` imports some functions from other modules so that we can use them.
 
 The `main =` line defines a function.  The part before the equal is the name of the function and the part after the `=` is the body of the function.
 
-In the body of the function we first use `putStrLn` to write "What's your name?" to the screen.
+Inside the body of the function we use `putStrLn` to write the string "What's your name?" to the screen.
 
-The next line `hFlush stdout` is necessary because the runtime library buffers output for performance and we want to be sure the user
+The next line `hFlush stdout` is necessary because the runtime library buffers output for performance.  We want to be sure the user
 has seen the question before we wait for input in the next line.
 
-The `line <- getLine` assigns the result of the funciton call `getLine` the name `line`.
+The `line <- getLine` code defines the name `line` as the result of the `getLine` function.
 
-In the last line we concatenate the users response to "Hello " wth `++` and output it to stdout with `putStrLn`.
+In the last line we concatenate the users response to "Hello " and output it to stdout.
 
 
 
@@ -45,14 +45,7 @@ The `do` notation allows a series of expressions to be executed in order.
 
 
 
-# Running the program
-
-The easiest way to run that program is to use `runghc hello.hs`
-
-
-
-
-# Lets define a function and use it
+# Defining Functions
 
 ```
 greeting name = "Hello " ++ name ++ "!"
