@@ -54,7 +54,7 @@ The easiest way to run that program is to use `runghc hello.hs`
 
 # Lets define a function and use it
 
-```
+```haskell
 greeting name = "Hello " ++ name ++ "!"
 
 main = do
@@ -108,14 +108,14 @@ Above, the string, `(Integer, Integer)`, represents a single compound type.
 
 Short example of creating tuples
 
-  ```
+  ```haskell
   let foo = (0, 0)
   let bar = (0, 0.0, 'haskell')
   ```
 
 Haskell provides the built in functions, fst and snd, for deconstructing tuples.
 
-    ```
+    ```haskell
     let foo = (1, 3)
     let x = fst foo
     let y = snd foo
@@ -135,7 +135,7 @@ Or you can just use Haskell syntax sugar to write the list, `let foo = [1, 2, 3]
 
 Haskell provides methods to operate on lists, head, tail, length, etc....
 
-  ```
+  ```haskell
   let xs = [1,2,3]
   let foo = head xs                          -- 1
   let bar = tail xs                          -- [2,3]
@@ -149,7 +149,7 @@ Now that we have seen tuples and lists we can look a little closer at pattern ma
 
 first the example:
 
-    ```
+    ```haskell
     myFst (x, _) = x
     mySnd (_, y) = y
 
@@ -173,7 +173,7 @@ Notice that `_` is used for values we don't care about.
 
 This works with lists as well.
 
-  ```
+  ```haskell
   myHead (x : _)  = x
   myTail (_ : xs) = xs
 
@@ -189,7 +189,7 @@ Lets take a look at the basica syntax for defining types.
 
 Here's the standard library definition for Bool.
 
-   ```
+   ```haskell
    data Bool = False | True
    ```
 
@@ -203,7 +203,7 @@ This is a boolean type so it only needs two value constructors; False and True a
 
 Lets look at a slightly more complex example
 
-   ```
+   ```haskell
    data Shape
      = Circle Float Float Float
      | Rectangle Float Float Float Float
@@ -219,7 +219,7 @@ Rectangle takes 4 float Values, lets say they're the x and y position and length
 
 You would construct shapes like this
 
-    ```
+    ```haskell
     let c1 = Circle 0 0 3.5
     let r2 = Rectangle 0 0 2 1
     ```
@@ -230,7 +230,7 @@ So Haskell provides Records which allows the construcotr arguments to have names
 
 If we define a our shape this way
 
-  ```
+  ```haskell
     data Shape
       = Circle
           { x :: Float
@@ -247,13 +247,13 @@ If we define a our shape this way
 
 We can use record syntax when we construct the values
 
-  ```
+  ```haskell
     let c1 = Circle { x=0, y=0, size=3}
   ```
 
 Record syntax provides selector functions for each field so that you can extract values from the record.
 
-  ```
+  ```haskell
     let c1 = Circle { x=3, y=5, size=7 }
     let foo = x c1
     let c2 = c1 { size = 9 }
@@ -261,7 +261,7 @@ Record syntax provides selector functions for each field so that you can extract
 
 Here we write our own selectors for the Shape type that returns the x value.
 
-    ```
+    ```haskell
     xOf :: Shape -> Float
     xOf    (Circle x _ _)      = x
     xOf    (Rectangle x _ _ _) = x
@@ -269,7 +269,7 @@ Here we write our own selectors for the Shape type that returns the x value.
 
 We can even write incomplete functions
 
-    ```
+    ```haskell
     sizeOf :: Shape -> Float
     sizeOf (Circle x _ _) = x
     sizeOf _ = error "I can't do that"
@@ -280,7 +280,7 @@ Now we need language extensions
 
 [https://downloads.haskell.org/ghc/latest/docs/html/users_guide/glasgow_exts.html#duplicate-record-fields]
 
- ```
+ ```haskell
  {-# LANGUAGE DuplicateRecordFields #-}
  ```
 
@@ -293,7 +293,7 @@ The `List` type is like that.  What makes a list useful is that it's a container
 
 First an example:
 
-   ```
+   ```haskell
    data Box a
      = EmptyBox
      | MkBox a
@@ -338,7 +338,7 @@ That means the type constructor must take a type parameter `Box a`.
 
 Here we write a function that has a type variable
 
-   ```
+   ```haskell
    myNull :: [a] -> Bool
    myNull [] = True
    myNull _  = False
@@ -352,7 +352,7 @@ The `a` can be any type.
 
 The type of a can be constrained to a type class.
 
-   ```
+   ```haskell
    myNull :: Num a => [a] -> Bool
    myNull [] = True
    myNull _  = False
@@ -362,7 +362,7 @@ Now the type of a must belong to the `Num` typeclass.
 
 We can't do this.
 
-   ```
+   ```haskell
    putStrLn (show (myNull ["hi", "bye"]))
    ```
 
@@ -379,7 +379,7 @@ https://medium.com/@l.mugnaini/functors-applicatives-and-monads-in-pictures-784c
 
 A functor is any data that defines how fmap applies to it.
 
-```
+```haskell
 class Functor f where
   fmap :: (a -> b) -> f a -> f b
 ```
