@@ -35,13 +35,16 @@ qux a = do
 
 
 main = do
-    let x = [1,2,3] >>= (\n -> [n + 1])
-    let z = [1,2,3] >>= qux
-    let foo = MkBox 1
-    let bar = MkBox "hi"
-    putStrLn (show z)
-    putStrLn (show x)
-    putStrLn (show foo)
-    putStrLn (show bar)
-    putStrLn (show (truthy (3 :: Integer)))
-    putStrLn "hello"
+    -- let x = [1,2,3] >>= (\n -> [n + 1])
+    -- let z = [1,2,3] >>= qux
+    -- let foo = MkBox 1
+    -- let bar = MkBox "hi"
+    -- putStrLn (show z)
+    -- putStrLn (show x)
+    -- putStrLn (show foo)
+    -- putStrLn (show bar)
+    -- putStrLn (show (truthy (3 :: Integer)))
+    getLine >>= putStrLn
+    putStrLn "hello \n world"
+    where
+        stuff = [1, 2, 3]

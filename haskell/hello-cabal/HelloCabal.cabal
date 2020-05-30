@@ -1,0 +1,21 @@
+cabal-version:       >=1.10
+name:                HelloCabal
+version:             0.1.0.0
+license-file:        LICENSE
+author:              Michael Greenly
+maintainer:          michaelgreenly@logic-refinery.com
+build-type:          Simple
+extra-source-files:  CHANGELOG.md
+
+library
+  exposed-modules:     MyLib
+  build-depends:       base >=4.14 && <4.15
+  hs-source-dirs:      src
+  default-language:    Haskell2010
+
+executable HelloCabal
+  main-is:             src/Main.hs
+  build-depends:       base >=4.14 && <4.15, HelloCabal
+                       , optparse-applicative
+                       , ansi-wl-pprint
+  default-language:    Haskell2010

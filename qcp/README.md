@@ -25,3 +25,8 @@ TODO:
   /src/main.hs
   /src/PROJECTNAME
   /util
+
+
+RESOURCES
+  * http://research.microsoft.com/en-us/um/people/simonpj/Papers/pj-lester-book/
+  * http://research.microsoft.com/en-us/um/people/simonpj/papers/slpj-book-1987/
